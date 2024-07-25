@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>Registrationform</title>
+    <style>
+        *{
+            background: linear-gradient(to right,#e3df16,#1bd4f9);
+        }
+        .table{
+            border: 3px double aqua;
+            
+            border-radius: 20px;
+        }
+        .tablehead{
+            border-radius: 10px;
+        }
+        .submit{
+            width: 80px;
+                height: 30px;
+                font-size:20px ;
+                cursor: pointer;
+                background-color: rgb(17, 255, 0);
+                border-radius: 25px;
+        }
+        .submitth{
+            border-radius: 10px;
+        }
+        input{
+            border-radius: 10px;
+        }
+        .genderin{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+</html>
+
+<body>
+    <center><br><br><br><br>
+        <table class="table" border="1 solid" width="500px" height="50%">
+            <tr>
+                <th class="tablehead" colspan="2">Registration Form <br><br></th>
+            </tr>
+            <tr>
+                <td>Student Name</td>
+                <td><input type="text"  required></td>
+            </tr>
+            <tr>
+                <td>Father's Name</td>
+                <td><input type="text" required></td>
+            </tr>
+            <tr>
+                <td>Mother's Name</td>
+                <td><input type="text" required></td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td><input type="date"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td ><input  type="radio" class="genderin" name="gender">Male
+                    <input type="radio" class="genderin" name="gender">Female
+                </td>
+            </tr>
+            <tr>
+                <td>Email ID</td>
+                <td><input type="email" required></td>
+            </tr>
+            <tr>
+                <td>Mobile No</td>
+                <td><input type="number" required></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea> </textarea></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td><input type="text" required></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input type="text" required></td>
+            </tr>
+            <tr>
+                <th class="submitth" colspan="2"><input type="button" class="submit" value="Submit"></th>
+            </tr>
+        </table>
+    </center>
+    
+</body>

@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <title>Login Page</title>
+    <style>
+        .Full {
+            height: 800px;
+            width: 1250px;
+            background-image: url(background.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login2 {
+
+            border-radius: 10px;
+            background-color: rgba(5, 12, 19, 0.7);
+            padding: 25px;
+        }
+
+        td {
+            text-align: center;
+            color: white;
+            font-size: 20PX;
+        }
+
+        tr {
+            height: 50px;
+        }
+
+        .button {
+
+            height: 40px;
+            font-size: 20px;
+            border: none;
+            background-color: darkgreen;
+            color: white;
+            border-radius: 10px;
+            width: 300px;
+            border: none;
+            border-bottom: 2px solid white;
+            border-right: 2px solid white;
+            cursor: pointer;
+        }
+
+        input {
+            opacity: 1.0;
+
+        }
+
+        a {
+            color: antiquewhite;
+        }
+
+        .user {
+            width: 300px;
+            border: none;
+            border-bottom: 3px solid white;
+            background: transparent;
+        }
+
+        .logo {
+
+            background-image: url(star1.jpg);
+            height: 110px;
+            width: 110px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 170px;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Full">
+        <div class="logo"></div>
+        <div class="login2">
+
+            <table>
+                <tr></tr>
+                <tr>
+                    <td colspan="2" style="color: white;">
+                        <h4>LOGIN WINDOW</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="text" placeholder="Your Email Address" class="user"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="password" placeholder="Your Password" class="user"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="checkbox">Agree with <a href="">Terms&Condition</a></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="login" class="button"></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

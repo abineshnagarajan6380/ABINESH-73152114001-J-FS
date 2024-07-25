@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>Arrow Functions</title>
+</head>
+
+<body>
+    <script>
+        //without argument Arrow Function
+        const sum = () => 10 + 20;
+        document.write("<br>Addition :" + sum());
+
+        //with argument Arrow Function
+        const sub = (x, y) => x - y;
+        document.write("<br>Subraction :" + sub(10, 20));
+
+        //with argument & using return in Arrow Function
+        const mul = (x, y) => { return (x * y) };
+        document.write("<br>Multiplication :" + mul(10, 20));
+
+        // this is Biggest Number Using Arrow Function
+        const big = (x, y) => {
+            if (x > y)
+                return x;
+            else
+                return y;
+        };
+        document.write("<br>Biggest Number :" + big(10, 20));
+
+        // this is factorial number using Arrow function
+        const factorial = (x) => {
+            let result = "1";
+            for (let i = 1; i <= x; i++) {
+                result = result * i;
+            }
+            return result;
+        };
+        document.write("<br>factorial Number :" + factorial(5));
+
+        
+    </script>
+</body>
+
+</html>

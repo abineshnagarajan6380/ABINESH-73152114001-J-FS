@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Calculater</title>
+        <style>
+            .outerBox{
+                border: 2px solid black;
+                width: 400px;
+                margin-left: 420px;
+                margin-top: 150px;
+                background-color: rgb(131, 131, 131);
+                border-radius: 10px;
+                
+            }
+            .row{
+               
+                height: 100px;
+                width: 400px;
+                display: flex;
+                
+            }
+            .box{
+                border: 2px solid black;
+                height: 80px;
+                width: 100px;
+                font-size: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(0, 234, 255);
+                margin: 8px;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+            .box:hover{
+                border: 5px solid rgb(19, 11, 11);
+                height: 80px;
+                width: 100px;
+                font-size: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: skyblue;
+                margin: 8px;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+            .display{
+                height: 80px;
+                width: 380px;
+                border: 2px solid black;
+                margin-top: 10px;
+                margin-left: 8px;
+                background-color: white;
+                font-size: 50px;
+            }
+            input::placeholder{
+                color: black;
+            }
+            input::content{
+                font-size: 70px;
+            }
+
+        </style>
+    </head>
+    <head>
+        <div class="outerBox">
+            <div class="row">
+                <input placeholder="0" type="text" class="display"></input>
+            </div>
+            <div class="row">
+                <button class="box">C</button><button class="box">%</button><button class="box">1</button><button class="box">/</button>
+            </div>
+            <div class="row">
+                <button class="box">7</button><button class="box">8</button><button class="box">9</button><button class="box">*</button>
+            </div>
+            <div class="row">
+                <button class="box">4</button><button class="box">5</button><button class="box">6</button><button class="box">-</button>
+            </div>
+            <div class="row">
+                <button class="box">1</button><button class="box">2</button><button class="box">3</button><button class="box">+</button>
+            </div>
+            <div class="row">
+                <button class="box">00</button><button class="box">0</button><button class="box">.</button><button class="box">=</button>
+            </div>
+        </div>
+    </head>
+</html>

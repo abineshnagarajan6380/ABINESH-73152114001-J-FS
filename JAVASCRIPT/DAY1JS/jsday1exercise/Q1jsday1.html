@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeNumber</title>
+    <script>
+        function PrimeNumber() {
+            let a = parseInt(document.getElementById("input").value);
+            let temp = 0;
+            for (let i = 0; i <= a; i++) {
+                if (a % i == 0) {
+                    temp++;
+                }
+            }
+            if (temp == 2) {
+                document.getElementById("answer").innerHTML = "Primenumber";
+            }
+            else {
+                document.getElementById("answer").innerHTML = "NotPrimenumber";
+            }
+
+        }  
+    </script>
+</head>
+
+<body>
+    Enter the Number
+    <input type="text" value="Enter the Number" onfocus="this.value=''" onblur="PrimeNumber()" id="input">
+    <br>
+    <button onclick="PrimeNumber()">Prime</button>
+    <div id="answer">
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator</title>
+</head>
+<style>
+  body {
+    height: 100vh;
+    background-color: white;
+  }
+
+  .main {
+    width: 400px;
+    background-color: rgb(8, 7, 7);
+    padding: 50px 30px 20px 30px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 20px;
+
+  }
+
+  .display {
+    width: 100%;
+  }
+
+  .display input {
+    width: 100%;
+    padding: 15px 10px;
+    text-align: right;
+    border: none;
+    background-color: white;
+    color: #040404;
+    font-size: 35px;
+    overflow: hidden;
+    border-radius: 30px;
+  }
+
+  .display input::placeholder {
+    color: #9490ac;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin-top: 40px;
+  }
+
+  button {
+    font-size: 20px;
+    padding: 17px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 5px;
+    border-radius: 10px;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+  }
+
+  #equal {
+    grid-row: span 2;
+  }
+
+  #zero {
+    grid-column: span 2;
+  }
+
+  .operator {
+    background-color: rgb(10, 218, 245);
+  }
+
+  .operation-button:hover {
+    background-color: #f62206db;
+  }
+
+  .digit-button {
+    background-color: #b5b4b4;
+  }
+
+  .digit-button:hover {
+    background-color: #f719ffa8;
+  }
+</style>
+
+<body>
+  <div class="main">
+    <div class="display">
+      <input type="text" placeholder="0" id="input" />
+    </div>
+    <div class="buttons">
+
+      <button value="AC" id="clear" class="operator" onclick="clear()">AC</button>
+
+      <button value="DEL" id="erase" class="operator" onclick="deletes()">DEL</button>
+      <button value="/" class="operator" onclick="functions('/')">/</button>
+      <button value="*" class="operator" onclick="functions('*')">*</button>
+
+      <button value="7" class="digit-button button" onclick="functions('7')">7</button>
+      <button value="8" class="digit-button button" onclick="functions('8')">8</button>
+      <button value="9" class="digit-button button" onclick="functions('9')">9</button>
+      <button value="-" class="operator" onclick="functions('-')">-</button>
+
+      <button value="6" class="digit-button button" onclick="functions('6')">6</button>
+      <button value="5" class="digit-button button" onclick="functions('5')">5</button>
+      <button value="4" class="digit-button button" onclick="functions('4')">4</button>
+      <button value="+" class="operator" onclick="functions('+')">+</button>
+
+      <button value="1" class="digit-button button" onclick="functions('1')">1</button>
+      <button value="2" class="digit-button button" onclick="functions('2')">2</button>
+      <button value="3" class="digit-button button" onclick="functions('3')">3</button>
+
+      <button value="=" id="equal" class="operator" onclick="calculate()">=</button>
+      <button value="0" class="digit-button button" id="zero" onclick="functions('0')">0</button>
+      <button value="." class="digit-button button" onclick="functions('.')">.</button>
+
+    </div>
+    <script>
+      let input = (document.getElementById("input"));
+      function functions(a) {
+
+        if (a == '0' || a == '1' || a == '2' || a == '3' || a == '4' || a == '5' || a == '6' || a == '7' || a == '8' || a == '9' || a == '+' || a == '-' || a == '*' || a == '/' || a == '.') {
+          input.value += a;
+        }
+
+      }
+      function clear() {
+        input.value = "";
+      }
+      function deletes() {
+        input.value = input.value.substring(0, input.value.length - 1);
+      }
+      function calculate() {
+        input.value = eval(input.value);
+      }
+
+    </script>
+</body>
+
+</html>

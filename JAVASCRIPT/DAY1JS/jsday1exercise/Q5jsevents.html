@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    Enter the String <input type="text" id="n1">
+    <br>
+     <button id="sub" onclick="pali()">Result</button>  
+     <button id="sub" onload="pali()">Result</button> 
+     <button id="sub" onmouseover="over()" onmouseout="out()">Result</button> 
+     <button id="sub" onload="pali()">Result</button>
+     
+    
+    <div id="res">
+ 
+    </div>
+
+    
+
+<script>
+    let pali = function(){
+        let reverse ="";
+        let ans="";
+       let str = document.getElementById("n1").value;
+       for (let i = str.length - 1; i >= 0; i--) {
+        reverse += str[i];
+    }
+    if(str===reverse){
+      ans="Palindrome"
+    }    
+    else{
+      ans="Not Palindrome"
+    }
+    document.getElementById("res").innerHTML = ans;
+}
+
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function factorial() {
+            let a = parseInt(document.getElementById("n1").value);
+            let result = "1";
+            for (let i = 1; i <= a; i++) {
+                result =result*i;
+            }
+            document.getElementById("ResultDiv").innerHTML = result;
+        }
+        
+    </script>
+</head>
+
+<body>
+    Enter the Number <input type="text" value="Enter the Number"  
+    onfocus="this.value='' " onblur="factorial()" id="n1" >
+    <br>
+    <!--<button onclick="factorial()">Factorial</button>-->
+    <br>
+    <div id="ResultDiv">
+
+    </div>
+</body>
+
+</html>

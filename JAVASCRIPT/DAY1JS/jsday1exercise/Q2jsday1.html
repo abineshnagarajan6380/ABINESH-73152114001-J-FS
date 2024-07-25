@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+    <script>
+        function Palindrome() {
+            var input = document.getElementById("input").value.toLowerCase().replace(/[^A-Za-z0-9]/g, '');
+            var reverseinput = input.split('').reverse().join('');
+            if (input == reverseinput) {
+                document.getElementById("answer").textContent = 'Palindrome';
+            }
+            else {
+                document.getElementById("answer").textContent = 'not a Palindrome';
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    Enter the Number
+    <input type="text" value="Enter the Number" onfocus="this.value=''" onblur="PrimeNumber()" id="input">
+    <br>
+    <button onclick="Palindrome()">Prime</button>
+    <div id="answer">
+
+    </div>
+</body>
+
+</html>

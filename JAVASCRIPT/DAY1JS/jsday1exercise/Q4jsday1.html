@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeNumber</title>
+    <script>
+        function length() {
+            
+            let a = document.getElementById("input").value;
+            let op=document.getElementById("op").value;
+            let result=" ";
+            if(op=="String length"){
+                result=a.length;
+            }
+            if(op=="String charAt()"){
+                result=a.charAt(0);
+            }
+            if(op=="String slice()"){
+                result=a.slice(2,8);
+            }
+            document.getElementById("answer").textContent = result;
+           
+        }  
+    </script>
+</head>
+
+<body>
+    Enter the Number
+    <input type="text" value="Enter the Number" onfocus="this.value=''" onblur="PrimeNumber()" id="input">
+    <br><br>
+    <select  id="op">
+        <option value="String length">String length</option>
+        <option value="String charAt()">String charAt()</option>
+        <option value="String slice()">String slice()</option>
+        <option value="String substring()">String substring()</option>
+        <option value="String substr()">String substr()</option>
+        <option value="String toUpperCase()">String toUpperCase()</option>
+        <option value="String toLowerCase()">String toLowerCase()</option>
+        <option value="String concat()">String concat()</option>
+        <option value="String trim()">String trim()</option>
+        <option value="String trimStart()">String trimStart()</option>
+        <option value="String trimEnd()">String trimEnd()</option>
+        <option value="String repeat()">String repeat()</option>
+        <option value="String replace()">String replace()</option>
+        <option value="String replaceAll()">String replaceAll()</option>
+        <option value="String split()">String split()</option>
+        
+    </select><br><br>
+    <button onclick="length()">length</button>
+    <div id="answer">
+
+    </div>
+</body>
+
+</html>

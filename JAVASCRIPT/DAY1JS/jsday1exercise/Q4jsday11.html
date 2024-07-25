@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNCTIONS</title>
+    <script>
+        function length() {
+            let a = document.getElementById("input").value;
+            let result=" ";
+            let a1="Bike";
+            document.getElementById("Length").textContent ="Length is: "+a.length;
+            document.getElementById("charat").textContent ="charAt(0) is: "+a.charAt(0);
+            document.getElementById("slice").textContent ="a.slice(2,8) is: "+a.slice(2,8);
+            document.getElementById("substring").textContent ="a.substring(2,8) is: "+a.substring(2,8);
+            document.getElementById("substr").textContent ="a.substr(2,8) is: "+a.substr(5,7);
+            document.getElementById("toUpperCase").textContent ="a.toUpperCase() is: "+a.toUpperCase();
+            document.getElementById("toLowerCase").textContent ="a.toLowerCase() is: "+a.toLowerCase();
+            document.getElementById("concat").textContent ="a.concat(' ',a1) is :"+a.concat(" ",a1);
+            document.getElementById("trim()").textContent ="a.trim() is: "+a.trim();
+            document.getElementById("trimStart()").textContent ="a.trimStart() is: "+a.trimStart();
+            document.getElementById("trimEnd()").textContent ="a.trimEnd() is: "+a.trimEnd();
+            document.getElementById("repeat(2)").textContent ="a.repeat(2) is: "+a.repeat(2);
+            document.getElementById("a.replace()").textContent ='a.replace("abinesh","ragavan") is: '+a.replace("abinesh","ragavan");
+            document.getElementById("a.replaceAll()").textContent ='a.replaceAll("a","A") is: '+a.replaceAll("a","A");
+            document.getElementById("a.split()").textContent ="a.split() is: ['"+a.split()+"']";
+            console.log(a.split("+"));
+        }
+
+    </script>
+</head>
+
+<body>
+    Enter the String
+    <input type="text" value="Enter the String" onfocus="this.value=''" onblur="PrimeNumber()" id="input">
+    
+    <br><br>
+    <button onclick="length()">Functions</button>
+    <div id="Length"></div>
+    <div id="charat"></div>
+    <div id="slice"></div>
+    <div id="substring"></div>
+    <div id="substr"></div>
+    <div id="toUpperCase"></div>
+    <div id="toLowerCase"></div>
+    <div id="concat"></div>
+    <div id="trim()"></div>
+    <div id="trimStart()"></div>
+    <div id="trimEnd()"></div>
+    <div id="repeat(2)"></div>
+    <div id="a.replace()"></div>
+    <div id="a.replaceAll()"></div>
+    <div id="a.split()"></div>
+
+
+</body>
+
+</html>

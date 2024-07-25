@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         /*
+        function myFunction(){
+            document.write("<b>Javascript Function Example</b>");
+
+        }
+       function addition(a,b){
+            let sum=a+b;
+            document.write("<b>Sum:</b>" +sum);
+        }
+        function Subraction(a,b){
+            let subraction=a-b;
+            document.write("<b>Different:</b>" +subraction);
+        }
+       
+       function addition(a,b){
+            let sum=a+b;
+            alert("Addition :) " +sum);
+        }
+        function Subraction(a,b){
+            let subraction=a-b;
+            alert("Subraction :) " +subraction);
+        }
+        function Multiplication(a,b){
+            let multiplication=a*b;
+            alert("Multiplication :) " +multiplication);
+        }
+        */
+       function welcome(){
+        alert("Hi,Welcome!");
+       }
+      function greeting(){
+        let name=prompt("Enter your Name");
+        alert("Welcome"+name);
+
+      }
+      function leave(){
+        confirm("do you want to leave the page?");
+      }
+
+    </script>
+</head>
+<body>
+    
+    <!--
+    <button onclick="myFunction()">Click Me</button>
+    <br><br>
+    <button onclick="addition(10,20)">Addition</button>
+    <br><br>
+    <button onclick="Subraction(10,20)">Subraction</button>
+    <br><br>
+    <button onclick="Multiplication(10,20)">Multiplication</button>
+    -->
+    <button onload="welcome()" onunload="leave()" onclick="greeting()">Say Welcome</button>
+    
+</body>
+</html>

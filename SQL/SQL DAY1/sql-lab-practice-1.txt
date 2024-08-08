@@ -1,0 +1,30 @@
+
+
+create table CLIENT_MASTER (Client_No varchar2(6),Name  varchar2(20),City  varchar2(20), Pincode number(6),Bal_due number(6));
+desc CLIENT_MASTER;
+insert into CLIENT_MASTER values ('C00001','SMITHA JAIN ','Mumbai',400054 ,15000);
+insert into CLIENT_MASTER values ('C00002','VANDANA RAO ','Chennai',780001  ,0);
+insert into CLIENT_MASTER values ('C00003','PREM PUJARI  ','Mumbai',400057  ,5000);
+insert into CLIENT_MASTER values ('C00004','BASU NATH ','Mumbai',400056 ,0);
+insert into CLIENT_MASTER values ('C00005','RAVI SHANKAR  ','Delhi ',100001  ,2000);
+insert into CLIENT_MASTER values ('C00006','ROOPA  ','Mumbai',400050 ,0);
+
+
+create table SALE_ORDER (Order_No varchar2(10),Order_Date  varchar2(20),Client_No varchar2(10), Salesman_No  varchar2(10),Dely_Date   varchar2(20), Order_Status varchar2(30));
+desc SALE_ORDER;
+insert into SALE_ORDER values ('O19001', '12-Jan-13', 'C00001', 'S00001', '20-Jan-13', 'In process');
+insert into SALE_ORDER values ('O19002', '25-Jan-13', 'C00002', 'S00002', '27-Jan-13', 'Cancelled');
+insert into SALE_ORDER values ('O46865', '18-Feb-13', 'C00003', 'S00003', '20-Feb-13', 'Fulfilled');
+insert into SALE_ORDER values ('O19003', '03-Apr-13', 'C00001', 'S00001', '07-Apr-13', 'Fulfilled');
+insert into SALE_ORDER values ('O46866', '20-May-13', 'C00004', 'S00002', '07-Apr-13', 'Cancelled');
+insert into SALE_ORDER values ('O19008', '24-May-13', 'C00005', 'S00004', '26-May-13', 'In process');
+
+
+
+select *from  CLIENT_MASTER;
+select *from SALE_ORDER;
+select *from CLIENT_MASTER where Bal_due=0;
+update  CLIENT_MASTER set City='Jaipur' where Client_no='C00004';
+select Client_No,City from CLIENT_MASTER where  City='Mumbai';
+
+drop table SALE_ORDER;

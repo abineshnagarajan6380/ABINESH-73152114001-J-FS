@@ -1,0 +1,409 @@
+
+SQL*Plus: Release 11.2.0.2.0 Production on Thu Aug 8 13:53:46 2024
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect
+Enter user-name: system
+Enter password:
+Connected.
+SQL> create table tbl_employee (eid number(10), ename varchar2(20),esalary number(10),dno number(10));
+
+Table created.
+
+SQL> insert into tbl_employee values (101,'valan',7000,10);
+
+1 row created.
+
+SQL> insert into tbl_employee values (102,'raj',3000,10);
+
+1 row created.
+
+SQL> insert into tbl_employee values (103,'kumar',4000,20);
+
+1 row created.
+
+SQL> insert into tbl_employee values (104,'vijay',5000,20);
+
+1 row created.
+
+SQL> insert into tbl_employee values (105,'ajay',6000,30);
+
+1 row created.
+
+SQL> insert into tbl_employee values (106,'',3000,30);
+
+1 row created.
+
+SQL> select  *from tbl_employee;
+
+       EID ENAME                   ESALARY        DNO
+---------- -------------------- ---------- ----------
+       101 valan                      7000         10
+       102 raj                        3000         10
+       103 kumar                      4000         20
+       104 vijay                      5000         20
+       105 ajay                       6000         30
+       106                            3000         30
+
+6 rows selected.
+
+SQL> select dno,count(*) from tbl_employee group by dno;
+
+       DNO   COUNT(*)
+---------- ----------
+        30          2
+        20          2
+        10          2
+
+SQL> select dno,count(*),sum(esalary),avg(esalary),min(esalary),max(esalary) from tbl_employee group by dno;
+
+       DNO   COUNT(*) SUM(ESALARY) AVG(ESALARY) MIN(ESALARY) MAX(ESALARY)
+---------- ---------- ------------ ------------ ------------ ------------
+        30          2         9000         4500         3000         6000
+        20          2         9000         4500         4000         5000
+        10          2        10000         5000         3000         7000
+
+SQL> select dno,count(*),sum(esalary),avg(esalary),min(esalary),max(esalary) from tbl_employee group by dno order by dno;
+
+       DNO   COUNT(*) SUM(ESALARY) AVG(ESALARY) MIN(ESALARY) MAX(ESALARY)
+---------- ---------- ------------ ------------ ------------ ------------
+        10          2        10000         5000         3000         7000
+        20          2         9000         4500         4000         5000
+        30          2         9000         4500         3000         6000
+
+SQL> select dno,count(*),sum(esalary),avg(esalary),min(esalary),max(esalary) from tbl_employee group by dno having min (esalary)>3000 order by dno;
+
+       DNO   COUNT(*) SUM(ESALARY) AVG(ESALARY) MIN(ESALARY) MAX(ESALARY)
+---------- ---------- ------------ ------------ ------------ ------------
+        20          2         9000         4500         4000         5000
+
+SQL> select dno,count(*),sum(esalary),avg(esalary),min(esalary),max(esalary) from tbl_employee group by dno having min (esalary)>2000 order by dno;
+
+       DNO   COUNT(*) SUM(ESALARY) AVG(ESALARY) MIN(ESALARY) MAX(ESALARY)
+---------- ---------- ------------ ------------ ------------ ------------
+        10          2        10000         5000         3000         7000
+        20          2         9000         4500         4000         5000
+        30          2         9000         4500         3000         6000
+
+SQL> select dno,count(*),sum(esalary),avg(esalary),min(esalary),max(esalary) from tbl_employee group by dno having min (esalary)>=3000 order by dno;
+
+       DNO   COUNT(*) SUM(ESALARY) AVG(ESALARY) MIN(ESALARY) MAX(ESALARY)
+---------- ---------- ------------ ------------ ------------ ------------
+        10          2        10000         5000         3000         7000
+        20          2         9000         4500         4000         5000
+        30          2         9000         4500         3000         6000
+
+SQL> select dno,count(*),sum(esalary),avg(esalary),min(esalary),max(esalary) from tbl_employee group by dno having sum (esalary)>9000 order by dno;
+
+       DNO   COUNT(*) SUM(ESALARY) AVG(ESALARY) MIN(ESALARY) MAX(ESALARY)
+---------- ---------- ------------ ------------ ------------ ------------
+        10          2        10000         5000         3000         7000
+
+SQL> create table tbl_student (reg_no numbe(5), primary key,
+  2  stud_name varchar2(20) not null,
+  3  stud_email varchar2(20) unique,
+  4  stud_age number(3) check(stud_age >0),
+  5  stud_location varchar2(20) default 'erode');
+create table tbl_student (reg_no numbe(5), primary key,
+                                      *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL>  create table tbl_student (reg_no numbe(5), primary key,
+  2    2  stud_name varchar2(20) not null,
+  3    3  stud_email varchar2(20) unique,
+  4    4  stud_age number(3) check(stud_age >0),
+  5    5  stud_location varchar2(20) default 'erode' create table tbl_student (reg_no numbe(5), primary key,
+  6    2  stud_name varchar2(20) not null,
+  7    3  stud_email varchar2(20) unique,
+  8    4  stud_age number(3) check(stud_age >0),
+  9
+SQL> create table tbl_student (reg_no number(5), primary key,stud_name varchar2(20) not null, stud_email varchar2(20) unique,stud_age number(3) check(stud_age >0),stud_location varchar2(20) default 'erode');
+create table tbl_student (reg_no number(5), primary key,stud_name varchar2(20) not null, stud_email varchar2(20) unique,stud_age number(3) check(stud_age >0),stud_location varchar2(20) default 'erode')
+                                                       *
+ERROR at line 1:
+ORA-00906: missing left parenthesis
+
+
+SQL> create table tbl_student (reg_no number(5) primary key,stud_name varchar2(20) not null, stud_email varchar2(20) unique,stud_age number(3) check(stud_age >0),stud_location varchar2(20) default 'erode');
+
+Table created.
+
+SQL> insert table tbl_student values(-11);
+insert table tbl_student values(-11)
+       *
+ERROR at line 1:
+ORA-00925: missing INTO keyword
+
+
+SQL> insert into table tbl_student values(-11);
+insert into table tbl_student values(-11)
+            *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> insert into tbl_student values (-11);
+insert into tbl_student values (-11)
+            *
+ERROR at line 1:
+ORA-00947: not enough values
+
+
+SQL> insert into tbl_student (reg_no,stud_name,stud_email,stud_age)values (501,'abinesh','abineshn493@gmail.com',39);
+insert into tbl_student (reg_no,stud_name,stud_email,stud_age)values (501,'abinesh','abineshn493@gmail.com',39)
+                                                                                    *
+ERROR at line 1:
+ORA-12899: value too large for column "SYSTEM"."TBL_STUDENT"."STUD_EMAIL"
+(actual: 21, maximum: 20)
+
+
+SQL> insert into tbl_student(233,'abinesh','baineshn493@gmail.com',39);
+insert into tbl_student(233,'abinesh','baineshn493@gmail.com',39)
+                        *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> insert into tbl_student(22,'abinesh','baineshn493@gmail.com',39);
+insert into tbl_student(22,'abinesh','baineshn493@gmail.com',39)
+                        *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> insert into tbl_student(22632,'abinesh','baineshn493@gmail.com',39);
+insert into tbl_student(22632,'abinesh','baineshn493@gmail.com',39)
+                        *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> insert into tbl_student values(4021,'Gokul','gokul@gmail.com',21,,Attur);
+insert into tbl_student values(4021,'Gokul','gokul@gmail.com',21,,Attur)
+                                                                 *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> insert into tbl_student values(4021,'Gokul','gokul@gmail.com',21,Attur);
+insert into tbl_student values(4021,'Gokul','gokul@gmail.com',21,Attur)
+                                                                 *
+ERROR at line 1:
+ORA-00984: column not allowed here
+
+
+SQL> insert into tbl_student values(4001,'abienesh','abineshn@gmail.com',20,salem);
+insert into tbl_student values(4001,'abienesh','abineshn@gmail.com',20,salem)
+                                                                       *
+ERROR at line 1:
+ORA-00984: column not allowed here
+
+
+SQL> create table department (dno number(5) primary key ,dname varchar2(20));
+
+Table created.
+
+SQL> create  table employee (eid number(5),primary key ,ename varchar2(20),esalary number(5),foreign key (dno) reference department (dno));
+create  table employee (eid number(5),primary key ,ename varchar2(20),esalary number(5),foreign key (dno) reference department (dno))
+                                                  *
+ERROR at line 1:
+ORA-00906: missing left parenthesis
+
+
+SQL> create  table employee (eid number(5) primary key ,ename varchar2(20),esalary number(5) dno number(5),foreign key (dno) references department (dno));
+create  table employee (eid number(5) primary key ,ename varchar2(20),esalary number(5) dno number(5),foreign key (dno) references department (dno))
+                                                                                        *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create  table employee (eid number(5) primary key ,ename varchar2(20),esalary number(5), dno number(5),foreign key (dno) references department (dno));
+
+Table created.
+
+SQL> insert into employee values(101,'abinesh',2000,10);
+insert into employee values(101,'abinesh',2000,10)
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (SYSTEM.SYS_C007090) violated - parent key not
+found
+
+
+SQL> insert into department values (10,'cse');
+
+1 row created.
+
+SQL> insert into department values (20,'eee');
+
+1 row created.
+
+SQL> insert into department values (30,'ece');
+
+1 row created.
+
+SQL> insert into department values (40,'mech');
+
+1 row created.
+
+SQL> insert into employee values (101,'abinesh',1000,10);
+
+1 row created.
+
+SQL> insert into employee values (102,'ragavan',2000,10);
+
+1 row created.
+
+SQL> insert into employee values (103,'rahul',3000,20);
+
+1 row created.
+
+SQL> insert into employee values (104,'rajasurya',4000,20);
+
+1 row created.
+
+SQL> insert into employee values (105,'agathiyan',5000,30);
+
+1 row created.
+
+SQL> insert into employee values (106,'akash',6000,30);
+
+1 row created.
+
+SQL> insert into employee values (107,'aravindh',7000,40);
+
+1 row created.
+
+SQL> insert into employee values (108,'arun',8000,40);
+
+1 row created.
+
+SQL> select *form employee
+  2  select *form employee;
+select *form employee
+        *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select *from employee;
+
+       EID ENAME                   ESALARY        DNO
+---------- -------------------- ---------- ----------
+       101 abinesh                    1000         10
+       102 ragavan                    2000         10
+       103 rahul                      3000         20
+       104 rajasurya                  4000         20
+       105 agathiyan                  5000         30
+       106 akash                      6000         30
+       107 aravindh                   7000         40
+       108 arun                       8000         40
+
+8 rows selected.
+
+SQL> select *from department;
+
+       DNO DNAME
+---------- --------------------
+        10 cse
+        20 eee
+        30 ece
+        40 mech
+
+SQL> create view myview as select * from tbl_employee where dno=10;
+
+View created.
+
+SQL> select *from myview;
+
+       EID ENAME                   ESALARY        DNO
+---------- -------------------- ---------- ----------
+       101 valan                      7000         10
+       102 raj                        3000         10
+
+SQL> select *from tbl_employee;
+
+       EID ENAME                   ESALARY        DNO
+---------- -------------------- ---------- ----------
+       101 valan                      7000         10
+       102 raj                        3000         10
+       103 kumar                      4000         20
+       104 vijay                      5000         20
+       105 ajay                       6000         30
+       106                            3000         30
+
+6 rows selected.
+
+SQL> update myview set esalary =4100 where eid=101;
+
+1 row updated.
+
+SQL> select *from tbl_employee;
+
+       EID ENAME                   ESALARY        DNO
+---------- -------------------- ---------- ----------
+       101 valan                      4100         10
+       102 raj                        3000         10
+       103 kumar                      4000         20
+       104 vijay                      5000         20
+       105 ajay                       6000         30
+       106                            3000         30
+
+6 rows selected.
+
+SQL> delete from myview ;
+
+2 rows deleted.
+
+SQL> select *from tbl_employee;
+
+       EID ENAME                   ESALARY        DNO
+---------- -------------------- ---------- ----------
+       103 kumar                      4000         20
+       104 vijay                      5000         20
+       105 ajay                       6000         30
+       106                            3000         30
+
+SQL> select *from myview;
+
+no rows selected
+
+SQL> drop view myview;
+
+View dropped.
+
+SQL> select eid ,ename from tbl_employee;
+
+       EID ENAME
+---------- --------------------
+       103 kumar
+       104 vijay
+       105 ajay
+       106
+
+SQL> select eid as "Employee Id",ename"Employee name" from tbl_employee;
+
+Employee Id Employee name
+----------- --------------------
+        103 kumar
+        104 vijay
+        105 ajay
+        106
+
+SQL> select dno,count(*)from tbl_employee group by dno;
+
+       DNO   COUNT(*)
+---------- ----------
+        30          2
+        20          2
+
+SQL> select dno,count (*) as "Total No of Employees "from tbl_employee group by dno;
+
+       DNO Total No of Employees
+---------- ----------------------
+        30                      2
+        20                      2
+
+SQL>
